@@ -127,7 +127,11 @@ A few more weird variations of 3 blocks in 3 layers:
 
 ## Grammar of the Specification
 
-TODO:
-
 PEG.js grammar to be included once we fix the syntax notation.
 
+{{{
+blk_diag = node_mod? node_name (op blk_diag)*
+op = [\:\|>]
+node_mod = [%$#!]
+node_name = [A-Za-z]
+}}}
