@@ -135,3 +135,13 @@ op = [\:\|>]
 node_mod = [%$#!]
 node_name = [A-Za-z]
 ```
+
+## AST Output - Example Inputs
+
+Given below are some of the expected AST outputs for sample input expressions:
+
+|A,:C,B:| - expected AST is:
+
+```
+{"pipe": ["A", "colon": ["C","B"]]}
+```

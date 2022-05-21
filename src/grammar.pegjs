@@ -1,4 +1,11 @@
-blk_diag = node_mod? node_name (op blk_diag)*
+blk_diag = seq_lbl_expr
+seq_lbl_expr = (label / sub_expr) ("," seq_lbl_expr )?
+sub_expr = sub_expr_colon / sub_expr_dollar / sub_expr_exclaim / sub_expr_hash / sub_expr_percent / sub_expr_pipe
+sub_expr_colon = ":" seq_lbl_expr ":"
+sub_expr_dollar = "$" seq_lbl_expr "$"
+sub_expr_exclaim = "!" seq_lbl_expr "!"
+sub_expr_hash = "#" seq_lbl_expr "#"
+sub_expr_percent = "%" seq_lbl_expr "%"
+sub_expr_pipe = "|" seq_lbl_expr "|"
+label = [A-Za-z0-9_-]+
 op = [\:\|>]
-node_mod = [%$#!]
-node_name = [A-Za-z_]+
